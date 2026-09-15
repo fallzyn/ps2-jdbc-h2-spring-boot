@@ -20,9 +20,9 @@ public class GerenciadorNomesApplication implements CommandLineRunner {
     public void run(String... args) {
 
         // Conexao com banco de dados
-        String url = "jdbc:h2:file:./data/banco_dados";
-        String usuario = "admin";
-        String senha = "admin";
+        String url = "jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:5432/postgres?user=postgres.hajpxnzhotqonljvykum&password=[YOUR-PASSWORD]";
+        String usuario = "postgres.hajpxnzhotqonljvykum";
+        String senha = System.getenv("DB_PASSWORD");
 
         try (Connection connection =
                 DriverManager.getConnection(url, usuario, senha);
