@@ -20,19 +20,13 @@ public class GerenciadorNomesApplication implements CommandLineRunner {
     public void run(String... args) {
 
         // Conexao com banco de dados
-        String url = "jdbc:postgresql://aws-0-us-east-2.pooler.supabase.com:5432/postgres?user=postgres.hajpxnzhotqonljvykum&password=[YOUR-PASSWORD]";
-        String usuario = "postgres.hajpxnzhotqonljvykum";
+        String url = "jdbc:postgresql://aws-0-ca-central-1.pooler.supabase.com:5432/postgres";
+        String usuario = "postgres.sdtyntjqjkosctswxrif";
         String senha = System.getenv("DB_PASSWORD");
 
         try (Connection connection =
                 DriverManager.getConnection(url, usuario, senha);
             Statement statement = connection.createStatement()) {
-
-            statement.execute("""
-                CREATE TABLE IF NOT EXISTS nomes (
-                    nome VARCHAR(256) NOT NULL UNIQUE
-                )
-                """);
             
             codigoAnterior(connection);
 
