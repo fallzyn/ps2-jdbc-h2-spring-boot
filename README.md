@@ -79,8 +79,13 @@ Não coloque a senha no código ou no repositório. A tabela deve ser criada pre
 A tabela utilizada pelo projeto é:
 
 ```sql
-CREATE TABLE IF NOT EXISTS nomes (
-    nome VARCHAR(256) NOT NULL UNIQUE
+CREATE TABLE IF NOT EXISTS produtos (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    nome VARCHAR(256) NOT NULL,
+    quantidade INTEGER NOT NULL,
+    preco NUMERIC(10, 2) NOT NULL,
+    ativo BOOLEAN NOT NULL,
+    data_cadastro DATE NOT NULL
 );
 ```
 
